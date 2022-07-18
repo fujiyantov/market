@@ -44,10 +44,10 @@
                         <div class="main-menu d-none d-lg-block">
                             <nav>
                                 <ul id="navigation">
-                                    <li><a href="index.html">Beranda</a></li>
-                                    <li><a href="produk.html">Produk Wisata</a></li>
-                                    <li><a href="#">Paket Wisata</a></li>
-                                    <li><a href="kontak.html">Kontak</a></li>
+                                    <li><a href="{{ route('home') }}">Beranda</a></li>
+                                    <li><a href="{{ route('products.index') }}">Produk Wisata</a></li>
+                                    <li><a href="{{ route('travels.index') }}">Paket Wisata</a></li>
+                                    <li><a href="{{ route('contact') }}">Kontak</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -68,10 +68,12 @@
                                 </li>
                                 <li>
                                     <div class="card-stor">
-                                        <img src="assets/img/icon/card.svg" alt=""
-                                            data-pagespeed-url-hash="3237307825"
-                                            onload="pagespeed.CriticalImages.checkImageForCriticality(this);" />
-                                        <span>0</span>
+                                        <a href="{{ route('checkout') }}">
+                                            <img src="{{ asset('assets/img/icon/card.svg') }}" alt=""
+                                                data-pagespeed-url-hash="3237307825"
+                                                onload="pagespeed.CriticalImages.checkImageForCriticality(this);" />
+                                            <span>0</span>
+                                        </a>
                                     </div>
                                 </li>
                             </ul>

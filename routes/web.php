@@ -1,8 +1,11 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MasterController;
+use App\Http\Controllers\TravelController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +25,11 @@ Route::get('/products', [ProductController::class, 'index'])->name('products.ind
 Route::get('/product-details/{product_id}', [ProductController::class, 'show'])->name('products.show');
 
 // Travels
-Route::get('/travels', [ProductController::class, 'index'])->name('travels.index');
+Route::get('/travels', [TravelController::class, 'index'])->name('travels.index');
+Route::get('/travel-details/{travel_id}', [TravelController::class, 'show'])->name('travels.show');
+
+// Checkout
+Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
+
+// Contact
+Route::get('/contact', [MasterController::class, 'contact'])->name('contact');

@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\TripTestimonial;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Trip extends Model
 {
@@ -33,5 +34,10 @@ class Trip extends Model
     public function gallery()
     {
         return $this->hasMany(TripGallery::class, 'trip_id');
+    }
+
+    public function terstimonial()
+    {
+        return $this->hasMany(TripTestimonial::class, 'trip_id');
     }
 }

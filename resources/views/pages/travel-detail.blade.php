@@ -21,7 +21,7 @@
                                             <a href="{{ route('home') }}">Home</a>
                                         </li>
                                         <li class="breadcrumb-item">
-                                            <a href="{{ route('products.index') }}">Products</a>
+                                            <a href="{{ route('products.index') }}">Travel</a>
                                         </li>
                                         <li class="breadcrumb-item">
                                             <a href="#">{{ $item->name }}</a>
@@ -76,15 +76,8 @@
                             {{ $item->description }}
                         </p>
                         <div class="card_area">
-                            <div class="product_count d-inline-block">
-                                <span class="inumber-decrement">
-                                    <i class="ti-minus"></i></span>
-                                <input class="input-number" type="text" value="1" min="0" max="10" />
-                                <span class="number-increment">
-                                    <i class="ti-plus"></i></span>
-                            </div>
                             <div class="add_to_cart">
-                                <a href="{{ route('checkout') }}" class="btn">add to cart</a>
+                                <a href="https://api.whatsapp.com/send?phone=6281211735338&text=Halo%20mau%20order%20gan" target="_blank" class="btn">Book Now</a>
                                 <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
                             </div>
                             <div class="social_icon">

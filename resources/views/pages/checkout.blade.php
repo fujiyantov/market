@@ -18,10 +18,10 @@
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item">
-                                            <a href="index.html">Home</a>
+                                            <a href="{{ route('home') }}">Home</a>
                                         </li>
                                         <li class="breadcrumb-item">
-                                            <a href="#">Produk</a>
+                                            <a href="#">Checkout</a>
                                         </li>
                                     </ol>
                                 </nav>
@@ -79,23 +79,6 @@
                                     praesentium, suscipit molestias quod dolorem sit eum porro!
                                 </p>
                             </div>
-                            <!-- <div class="payment_item active">
-                    <div class="radion_btn">
-                      <input type="radio" id="f-option6" name="selector" />
-                      <label for="f-option6">Paypal </label>
-                      <img
-                        src="assets/img/gallery/xcard.jpg.pagespeed.ic.dHda8uy866.webp"
-                        alt=""
-                        data-pagespeed-url-hash="771037055"
-                        onload="pagespeed.CriticalImages.checkImageForCriticality(this);"
-                      />
-                      <div class="check"></div>
-                    </div>
-                    <p>
-                      Please send a check to Store Name, Store Street, Store
-                      Town, Store State / County, Store Postcode.
-                    </p>
-                  </div> -->
                             <div class="creat_account checkout-cap">
                                 <input type="checkbox" id="f-option8" name="selector" />
                                 <label for="f-option8">I’ve read and accept the
@@ -109,35 +92,4 @@
             </div>
         </div>
     </section>
-
-    <div class="categories-area section-padding40 gray-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-cat mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                        <div class="cat-icon">
-                            <img src="assets/img/icon/services1.svg" alt="" data-pagespeed-url-hash="1965786122"
-                                onload="pagespeed.CriticalImages.checkImageForCriticality(this);" />
-                        </div>
-                        <div class="cat-cap">
-                            <h5>Fast & Free Delivery</h5>
-                            <p>Free delivery on all orders</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-cat mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-                        <div class="cat-icon">
-                            <img src="assets/img/icon/services4.svg" alt="" data-pagespeed-url-hash="2849285885"
-                                onload="pagespeed.CriticalImages.checkImageForCriticality(this);" />
-                        </div>
-                        <div class="cat-cap">
-                            <h5>Online Support</h5>
-                            <p>Free delivery on all orders</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection

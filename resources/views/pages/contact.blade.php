@@ -18,7 +18,7 @@
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item">
-                                            <a href="index.html">Home</a>
+                                            <a href="{{ route('home') }}">Home</a>
                                         </li>
                                         <li class="breadcrumb-item">
                                             <a href="#">kontak</a>
@@ -37,24 +37,23 @@
         <div class="container">
             <div class="d-none d-sm-block mb-5 pb-4">
                 <div id="map" style="height: 480px; position: relative; overflow: hidden">
-
                     <div
                         style="
-          background-color: white;
-          font-weight: 500;
-          font-family: Roboto, sans-serif;
-          padding: 15px 25px;
-          box-sizing: border-box;
-          top: 5px;
-          border: 1px solid rgba(0, 0, 0, 0.12);
-          border-radius: 5px;
-          left: 50%;
-          max-width: 375px;
-          position: absolute;
-          transform: translateX(-50%);
-          width: calc(100% - 10px);
-          z-index: 1;
-        ">
+                            background-color: white;
+                            font-weight: 500;
+                            font-family: Roboto, sans-serif;
+                            padding: 15px 25px;
+                            box-sizing: border-box;
+                            top: 5px;
+                            border: 1px solid rgba(0, 0, 0, 0.12);
+                            border-radius: 5px;
+                            left: 50%;
+                            max-width: 375px;
+                            position: absolute;
+                            transform: translateX(-50%);
+                            width: calc(100% - 10px);
+                            z-index: 1;
+                    ">
                         <div>
                             <img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/google_gray.svg"
                                 draggable="false"
@@ -121,7 +120,7 @@
                         });
                     }
                 </script>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-v8gfAKwMuaBRN1QQ0wssH05SlaN0qpA&callback=initMap">
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL3qmSEZlR-lTVQkqxUsBoM8IdoL4QkCA&callback=initMap">
                 </script>
             </div>
             <div class="row">

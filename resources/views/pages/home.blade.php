@@ -182,7 +182,7 @@
                             </div>
                             <div class="popular-caption">
                                 <h3>
-                                    <a href="{{ route('products.show', $item->id) }}">{{ $travel->name }}</a>
+                                    <a href="{{ route('products.show', $travel->id) }}">{{ $travel->name }}</a>
                                 </h3>
                                 <span>Rp {{ number_format($travel->price) }}</span>
                             </div>
