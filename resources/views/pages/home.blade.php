@@ -90,7 +90,7 @@
                                         <div class="popular-caption">
                                             <h3>
                                                 <a
-                                                    href="{{ route('products.show', $product->id) }}">{{ $product->title }}</a>
+                                                    href="{{ route('products.show', $product->id) }}">{{ $product->name }}</a>
                                             </h3>
                                             <span>Rp {{ number_format($product->price) }}</span>
                                         </div>
