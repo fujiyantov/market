@@ -21,9 +21,9 @@ function productImageGalleryUrl($fileName)
 function travelImageUrl($fileName)
 {
     if (env('APP_ENV') === 'production') {
-        return  env('STORAGE_URL_PROD') . '/products/images/' . $fileName;
+        return  env('STORAGE_URL_PROD') . '/trips/images/' . $fileName;
     } else {
-        return  env('STORAGE_URL_LOCAL') . '/products/images/' . $fileName;
+        return  env('STORAGE_URL_LOCAL') . '/trips/images/' . $fileName;
     }
 }
 
