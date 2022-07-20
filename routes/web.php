@@ -18,6 +18,10 @@ use App\Http\Controllers\CheckoutController;
 |
 */
 
+if (env('APP_ENV') === 'production') {
+    URL::forceScheme('https');
+}
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Products
