@@ -168,7 +168,7 @@
                                                     data-pagespeed-url-hash="3041166571"
                                                     onload="pagespeed.CriticalImages.checkImageForCriticality(this);" />
                                             @else
-                                                <img src="{{ productImageUrl($item->image) }}" alt=""
+                                                <img src="{{ travelImageUrl($item->image) }}" alt=""
                                                     data-pagespeed-url-hash="3041166571"
                                                     onload="pagespeed.CriticalImages.checkImageForCriticality(this);" />
                                             @endif

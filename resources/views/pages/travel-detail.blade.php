@@ -47,7 +47,7 @@
                                     if (substr($res->image, 0, 5) == 'https') {
                                         $imageLink = $res->image;
                                     } else {
-                                        $imageLink = productImageGalleryUrl($res->image);
+                                        $imageLink = travelImageGalleryUrl($res->image);
                                     }
                                 @endphp
                                 <div data-thumb="{{ $imageLink }}">
