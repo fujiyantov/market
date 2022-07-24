@@ -84,7 +84,7 @@
                                     <i class="ti-plus"></i></span>
                             </div>
                             <div class="add_to_cart">
-                                <a href="{{ route('checkout') }}" class="btn">add to cart</a>
+                                <a href="#" class="btn">add to cart</a>
                                 <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
                             </div>
                             <div class="social_icon">

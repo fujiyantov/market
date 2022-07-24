@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductCategory;
 use App\Models\ProductGallery;
 use App\Models\ProductTestimonial;
 use Illuminate\Http\Request;
@@ -12,9 +13,11 @@ class ProductController extends Controller
     public function index()
     {
         $collection = Product::all();
+        $categories = ProductCategory::all();
 
         return view('pages.product', [
-            'collection' => $collection
+            'collection' => $collection,
+            'categories' => $categories
         ]);
     }
 

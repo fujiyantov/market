@@ -67,10 +67,9 @@
                                 <div class="col-12">
                                     <div class="select-categories">
                                         <select name="select1">
-                                            <option value="">Category 1</option>
-                                            <option value="">Category 2</option>
-                                            <option value="">Category 3</option>
-                                            <option value="">Category 4</option>
+                                            @foreach ($categories as $category)
+                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -147,10 +146,9 @@
                                 <div class="select-cat">
                                     <span>Sort by</span>
                                     <select name="select">
-                                        <option value="">Category 1</option>
-                                        <option value="">Category 2</option>
-                                        <option value="">Category 3</option>
-                                        <option value="">Category 4</option>
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

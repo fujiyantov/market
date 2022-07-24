@@ -56,14 +56,11 @@
                     <div class="properties__button text-center">
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link active" id="nav-Sofa-tab" data-toggle="tab" href="#nav-Sofa"
-                                    role="tab" aria-controls="nav-Sofa" aria-selected="true">Category 1</a>
-                                <a class="nav-item nav-link" id="nav-Table-tab" data-toggle="tab" href="#nav-Table"
-                                    role="tab" aria-controls="nav-Table" aria-selected="false">Category 2</a>
-                                <a class="nav-item nav-link" id="nav-Chair-tab" data-toggle="tab" href="#nav-Chair"
-                                    role="tab" aria-controls="nav-Chair" aria-selected="false">Category 3</a>
-                                <a class="nav-item nav-link" id="nav-Bed-tab" data-toggle="tab" href="#nav-Bed"
-                                    role="tab" aria-controls="nav-Bed" aria-selected="false">Category 4</a>
+                                @foreach ($categories as $category)
+                                    <a class="nav-item nav-link active" id="nav-Sofa-tab" data-toggle="tab"
+                                        href="#{{ $category->id }}" role="tab" aria-controls="nav-Sofa"
+                                        aria-selected="true">{{ $category->name }}</a>
+                                @endforeach
                             </div>
                         </nav>
                     </div>
@@ -71,54 +68,37 @@
             </div>
             <div class="row">
                 <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-Sofa" role="tabpanel" aria-labelledby="nav-Sofa-tab">
-                        <div class="row">
-                            @foreach ($products as $product)
-                                <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="single-new-arrival mb-50 text-center">
-                                        <div class="popular-img">
-                                            @if (substr($product->image, 0, 5) == 'https')
-                                                <img src="{{ $product->image }}" alt=""
-                                                    data-pagespeed-url-hash="3041166571"
-                                                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);" />
-                                            @else
-                                                <img src="{{ productImageUrl($product->image) }}" alt=""
-                                                    data-pagespeed-url-hash="3041166571"
-                                                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);" />
-                                            @endif
-                                        </div>
-                                        <div class="popular-caption">
-                                            <h3>
-                                                <a
-                                                    href="{{ route('products.show', $product->id) }}">{{ $product->name }}</a>
-                                            </h3>
-                                            <span>Rp {{ number_format($product->price) }}</span>
+                    @foreach ($categories as $category)
+                        <div class="tab-pane fade show active" id="nav-Sofa" role="tabpanel"
+                            aria-labelledby="{{ $category->id }}-tab">
+                            <div class="row">
+                                @foreach ($category->products as $product)
+                                    <div class="col-lg-4 col-md-6 col-sm-6">
+                                        <div class="single-new-arrival mb-50 text-center">
+                                            <div class="popular-img">
+                                                @if (substr($product->image, 0, 5) == 'https')
+                                                    <img src="{{ $product->image }}" alt=""
+                                                        data-pagespeed-url-hash="3041166571"
+                                                        onload="pagespeed.CriticalImages.checkImageForCriticality(this);" />
+                                                @else
+                                                    <img src="{{ productImageUrl($product->image) }}" alt=""
+                                                        data-pagespeed-url-hash="3041166571"
+                                                        onload="pagespeed.CriticalImages.checkImageForCriticality(this);" />
+                                                @endif
+                                            </div>
+                                            <div class="popular-caption">
+                                                <h3>
+                                                    <a
+                                                        href="{{ route('products.show', $product->id) }}">{{ $product->name }}</a>
+                                                </h3>
+                                                <span>Rp {{ number_format($product->price) }}</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="tab-pane fade" id="nav-Table" role="tabpanel" aria-labelledby="nav-Table-tab">
-                        <!-- Product Category -->
-                    </div>
-
-                    <div class="tab-pane fade" id="nav-Chair" role="tabpanel" aria-labelledby="nav-Chair-tab">
-                        <!-- Product Category -->
-                    </div>
-
-                    <div class="tab-pane fade" id="nav-Bed" role="tabpanel" aria-labelledby="nav-Bed-tab">
-                        <!-- Product Category -->
-                    </div>
-
-                    <div class="tab-pane fade" id="nav-Lightning" role="tabpanel" aria-labelledby="nav-Lightning-tab">
-                        <!-- Product Category -->
-                    </div>
-
-                    <div class="tab-pane fade" id="nav-Decore" role="tabpanel" aria-labelledby="nav-Decore-tab">
-                        <!-- Product Category -->
-                    </div>
+                    @endforeach
 
                     <div class="row justify-content-center">
                         <div class="room-btn">
@@ -155,8 +135,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-8 col-md-10">
-                    <div class="section-tittle mb-60 text-center wow fadeInUp" data-wow-duration="2s"
-                        data-wow-delay=".2s">
+                    <div class="section-tittle mb-60 text-center wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">
                         <h2>Destination Favorite</h2>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
