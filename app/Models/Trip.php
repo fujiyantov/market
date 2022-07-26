@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\TravelCategory;
 use App\Models\TripTestimonial;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -34,6 +35,11 @@ class Trip extends Model
     public function gallery()
     {
         return $this->hasMany(TripGallery::class, 'trip_id');
+    }
+
+    public function categoryItem()
+    {
+        return $this->belongsTo(TravelCategory::class, 'category');
     }
 
     public function terstimonial()

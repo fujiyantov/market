@@ -13,15 +13,15 @@
                         <div class="col-xl-6 col-lg-8 col-md-8">
                             <div class="hero__caption hero__caption2">
                                 <h1 data-animation="fadeInUp" data-delay=".4s">
-                                    Wisata
+                                    Travel Budaya
                                 </h1>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item">
-                                            <a href="{{ route('home') }}">Home</a>
+                                            <a href="{{ route('home') }}">Beranda</a>
                                         </li>
                                         <li class="breadcrumb-item">
-                                            <a href="#">Travel</a>
+                                            <a href="#">Travel Budaya</a>
                                         </li>
                                     </ol>
                                 </nav>

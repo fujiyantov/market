@@ -13,15 +13,15 @@
                         <div class="col-xl-6 col-lg-8 col-md-8">
                             <div class="hero__caption hero__caption2">
                                 <h1 data-animation="fadeInUp" data-delay=".4s">
-                                    Produk
+                                    Produk Budaya
                                 </h1>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item">
-                                            <a href="{{ route('home') }}">Home</a>
+                                            <a href="{{ route('home') }}">Beranda</a>
                                         </li>
                                         <li class="breadcrumb-item">
-                                            <a href="#">Produk</a>
+                                            <a href="#">Produk Budaya</a>
                                         </li>
                                     </ol>
                                 </nav>
@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-xl-7 col-lg-8 col-md-10">
                     <div class="section-tittle mb-50">
-                        <h2>Shop with us</h2>
+                        <h2>Produk Budaya</h2>
                         <p>Browse from {{ number_format(count($collection)) }} latest items</p>
                     </div>
                 </div>
@@ -163,12 +163,10 @@
                                         <div class="popular-img">
                                             @if (substr($item->image, 0, 5) == 'https')
                                                 <img src="{{ $item->image }}" alt=""
-                                                    data-pagespeed-url-hash="3041166571"
-                                                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);" />
+                                                    data-pagespeed-url-hash="3041166571"/>
                                             @else
                                                 <img src="{{ productImageUrl($item->image) }}" alt=""
-                                                    data-pagespeed-url-hash="3041166571"
-                                                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);" />
+                                                    data-pagespeed-url-hash="3041166571"/>
                                             @endif
                                         </div>
                                         <div class="popular-caption">
@@ -184,7 +182,7 @@
 
                         <div class="row justify-content-center">
                             <div class="room-btn mt-20">
-                                <a href="#" class="border-btn">More</a>
+                                <a href="#" class="border-btn">MorLe</a>
                             </div>
                         </div>
                     </div>

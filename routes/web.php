@@ -18,9 +18,9 @@ use App\Http\Controllers\CheckoutController;
 |
 */
 
-if (env('APP_ENV') === 'production') {
+/* if (env('APP_ENV') === 'production') {
     URL::forceScheme('https');
-}
+} */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -33,7 +33,7 @@ Route::get('/travels', [TravelController::class, 'index'])->name('travels.index'
 Route::get('/travel-details/{travel_id}', [TravelController::class, 'show'])->name('travels.show');
 
 // Checkout
-Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
+Route::get('/checkout/{type}/{id}/{slug}', [CheckoutController::class, 'checkout'])->name('checkout');
 
 // Contact
 Route::get('/contact', [MasterController::class, 'contact'])->name('contact');

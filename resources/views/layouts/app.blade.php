@@ -13,76 +13,25 @@
       href="assets/img/favicon.ico"
     />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
     <link
       rel="stylesheet"
       href="https://preview.colorlib.com/theme/furn/assets/css/bootstrap.min.css+owl.carousel.min.css+slicknav.css+flaticon.css+progressbar_barfiller.css+lightslider.min.css+price_rangs.css+gijgo.css+animate.min.css+animated-headline.css+magnific-popup.css+fontawesome-all.min.css+themify-icons.css+slick.css+nice-select.css.pagespeed.cc.UQc7G8y4Ag.css"
     />
     <link
       rel="stylesheet"
-      href="{{ asset('assets/css/A.style.css.pagespeed.cf.pPUzXkcLuu.css') }}"
+      href="{{ asset('assets/css/style.css') }}"
     />
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script nonce="7ffbd42c-a8d5-43a3-8b7d-73818b67cddb">
-      (function (w, d) {
-        !(function (a, e, t, r) {
-          (a.zarazData = a.zarazData || {}),
-            (a.zarazData.executed = []),
-            (a.zaraz = { deferred: [] }),
-            (a.zaraz.q = []),
-            (a.zaraz._f = function (e) {
-              return function () {
-                var t = Array.prototype.slice.call(arguments);
-                a.zaraz.q.push({ m: e, a: t });
-              };
-            });
-          for (const e of ["track", "set", "ecommerce", "debug"])
-            a.zaraz[e] = a.zaraz._f(e);
-          (a.zaraz.init = () => {
-            var t = e.getElementsByTagName(r)[0],
-              z = e.createElement(r),
-              n = e.getElementsByTagName("title")[0];
-            for (
-              n && (a.zarazData.t = e.getElementsByTagName("title")[0].text),
-                a.zarazData.x = Math.random(),
-                a.zarazData.w = a.screen.width,
-                a.zarazData.h = a.screen.height,
-                a.zarazData.j = a.innerHeight,
-                a.zarazData.e = a.innerWidth,
-                a.zarazData.l = a.location.href,
-                a.zarazData.r = e.referrer,
-                a.zarazData.k = a.screen.colorDepth,
-                a.zarazData.n = e.characterSet,
-                a.zarazData.o = new Date().getTimezoneOffset(),
-                a.zarazData.q = [];
-              a.zaraz.q.length;
 
-            ) {
-              const e = a.zaraz.q.shift();
-              a.zarazData.q.push(e);
-            }
-            z.defer = !0;
-            for (const e of [localStorage, sessionStorage])
-              Object.keys(e || {})
-                .filter((a) => a.startsWith("_zaraz_"))
-                .forEach((t) => {
-                  try {
-                    a.zarazData["z_" + t.slice(7)] = JSON.parse(e.getItem(t));
-                  } catch {
-                    a.zarazData["z_" + t.slice(7)] = e.getItem(t);
-                  }
-                });
-            (z.referrerPolicy = "origin"),
-              (z.src =
-                "/cdn-cgi/zaraz/s.js?z=" +
-                btoa(encodeURIComponent(JSON.stringify(a.zarazData)))),
-              t.parentNode.insertBefore(z, t);
-          }),
-            ["complete", "interactive"].includes(e.readyState)
-              ? zaraz.init()
-              : a.addEventListener("DOMContentLoaded", zaraz.init);
-        })(w, d, 0, "script");
-      })(window, document);
-    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
     <style>
       .btn {
         background-color: #000 !important;
@@ -113,6 +62,7 @@
         background-color: rgb(39, 33, 47)!important;
       }
     </style>
+    @yield('stylesheet')
   </head>
   <body>
     @include('includes.navbar')
@@ -123,10 +73,15 @@
 
     @include('includes.footer')
 
-    <!-- <div id="back-top">
-      <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
-    </div> -->
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
     <script src="https://preview.colorlib.com/theme/furn/assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="https://preview.colorlib.com/theme/furn/assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="https://preview.colorlib.com/theme/furn/assets/js/popper.min.js+bootstrap.min.js.pagespeed.jc.Gj4oBSk9vD.js"></script>
@@ -233,5 +188,6 @@
       data-cf-beacon='{"rayId":"725c01dc1eea4bf8","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.6.0","si":100}'
       crossorigin="anonymous"
     ></script>
+    @yield('script')
   </body>
 </html>

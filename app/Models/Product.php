@@ -37,6 +37,11 @@ class Product extends Model
         return $this->hasMany(ProductGallery::class, 'product_id');
     }
 
+    public function categoryItem()
+    {
+        return $this->belongsTo(ProductCategory::class, 'category');
+    }
+
     public function terstimonial()
     {
         return $this->hasMany(ProductTestimonial::class, 'product_id');

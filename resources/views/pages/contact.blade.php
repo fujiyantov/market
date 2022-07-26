@@ -57,17 +57,7 @@
                         <div>
                             <img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/google_gray.svg"
                                 draggable="false"
-                                style="
-              padding: 0px;
-              margin: 0px;
-              border: 0px;
-              height: 17px;
-              vertical-align: middle;
-              width: 52px;
-              user-select: none;
-            "
-                                data-pagespeed-url-hash="1773485332"
-                                onload="pagespeed.CriticalImages.checkImageForCriticality(this);" />
+                                style="padding: 0px;margin: 0px;border: 0px;height: 17px;vertical-align: middle;width: 52px;user-select: none;" />
                         </div>
                         <div style="line-height: 20px; margin: 15px 0px">
                             <span style="color: rgba(0, 0, 0, 0.87); font-size: 14px">This page can't load Google Maps
@@ -168,25 +158,24 @@
                 </div>
                 <div class="col-lg-3 offset-lg-1">
                     <div class="media contact-info">
-                        <span class="contact-info__icon"><i class="ti-home"></i></span>
+                        <span class="contact-info__icon"><i class="fa fa-home"></i></span>
                         <div class="media-body">
                             <h3>Lorem ipsum dolor sit amet consectetur.</h3>
                             <p>Lorem, AD 11</p>
                         </div>
                     </div>
                     <div class="media contact-info">
-                        <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+                        <span class="contact-info__icon"><i class="fa fa-tablet"></i></span>
                         <div class="media-body">
                             <h3>+62812-9121-2222</h3>
                             <p>Mon to Fri 9am to 6pm</p>
                         </div>
                     </div>
                     <div class="media contact-info">
-                        <span class="contact-info__icon"><i class="ti-email"></i></span>
+                        <span class="contact-info__icon"><i class="fa fa-envelope"></i></span>
                         <div class="media-body">
                             <h3>
-                                <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                    data-cfemail="4c3f393c3c233e380c2f2320233e20252e622f2321">[email&#160;protected]</a>
+                                <a href="/cdn-cgi/l/email-protection" class="__cf_email__">email@app.com</a>
                             </h3>
                             <p>Send us your query anytime!</p>
                         </div>

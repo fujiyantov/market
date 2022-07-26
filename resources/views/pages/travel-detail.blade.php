@@ -4,6 +4,14 @@
     Market
 @endsection
 
+@section('stylesheet')
+    <style>
+        .section-padding40 {
+            padding-bottom: 10px!important
+        }
+    </style>
+@endsection
+
 @section('container')
     <div class="slider-area">
         <div class="slider-active">
@@ -13,15 +21,15 @@
                         <div class="col-xl-6 col-lg-8 col-md-8">
                             <div class="hero__caption hero__caption2">
                                 <h1 data-animation="fadeInUp" data-delay=".4s">
-                                    Produk Detail
+                                    Travel Budaya
                                 </h1>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item">
-                                            <a href="{{ route('home') }}">Home</a>
+                                            <a href="{{ route('home') }}">Beranda</a>
                                         </li>
                                         <li class="breadcrumb-item">
-                                            <a href="{{ route('products.index') }}">Travel</a>
+                                            <a href="{{ route('travels.index') }}">Travel Budaya</a>
                                         </li>
                                         <li class="breadcrumb-item">
                                             <a href="#">{{ $item->name }}</a>
@@ -51,9 +59,7 @@
                                     }
                                 @endphp
                                 <div data-thumb="{{ $imageLink }}">
-                                    <img src="{{ $imageLink }}" alt="" class="w-100"
-                                        data-pagespeed-url-hash="3041166571"
-                                        onload="pagespeed.CriticalImages.checkImageForCriticality(this);" />
+                                    <img src="{{ $imageLink }}" alt="" class="w-100" />
                                 </div>
                             @endforeach
                         </div>
@@ -66,7 +72,7 @@
                         <ul class="list">
                             <li>
                                 <a class="active" href="#">
-                                    <span>Category</span> : Category 1</a>
+                                    <span>Category</span> :  {{ $item->categoryItem->name }}</a>
                             </li>
                             <li>
                                 <a href="#"> <span>Availibility</span> : In Stock</a>
@@ -76,14 +82,16 @@
                             {{ $item->description }}
                         </p>
                         <div class="card_area">
+                           {{--  <div class="product_count d-inline-block">
+                                <span class="inumber-decrement" style="cursor: pointer">
+                                    <i class="fa fa-minus"></i></span>
+                                <input class="input-number" type="text" value="1" min="0" max="10" />
+                                <span class="number-increment" style="cursor: pointer">
+                                    <i class="fa fa-plus"></i></span>
+                            </div> --}}
                             <div class="add_to_cart">
-                                <a href="https://api.whatsapp.com/send?phone=6281211735338&text=Halo%20mau%20order%20gan" target="_blank" class="btn">Book Now</a>
-                                <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
-                            </div>
-                            <div class="social_icon">
-                                <a href="#" class="fb"><i class="ti-facebook"></i></a>
-                                <a href="#" class="tw"><i class="ti-twitter-alt"></i></a>
-                                <a href="#" class="li"><i class="ti-linkedin"></i></a>
+                                <a href="{{ route('checkout', ['travel', $item->id, Str::slug($item->name)]) }}" class="btn">Pesan Travel</a>
+                                <a href="#" class="like_us"> <i class="fa fa-heart"></i> </a>
                             </div>
                         </div>
                     </div>
@@ -242,13 +250,12 @@
                                 </div>
                             </div>
                             <div class="review_list">
-                                @foreach ($testimonials as $val)
+                                @foreach ($testimonials->take(2) as $val)
                                     <div class="review_item">
                                         <div class="media">
                                             <div class="d-flex">
-                                                <img src="assets/img/gallery/xreview-1.png.pagespeed.ic.jdf7CtxAfy.webp"
-                                                    alt="" data-pagespeed-url-hash="833170023"
-                                                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);" />
+                                                <img src="https://ui-avatars.com/api/?name=John+Doe"
+                                                    alt="" />
                                             </div>
                                             <div class="media-body">
                                                 <h4>{{ $val->user->name }}</h4>
@@ -335,4 +342,12 @@
             </div>
         </div>
     </section>
+@endsection
+@section('script')
+    <script>
+        $('.btn-cart').on('click', function(e) {
+            e.preventDefault();
+            console.log('add to cart')
+        })
+    </script>
 @endsection
