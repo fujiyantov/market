@@ -61,6 +61,10 @@
       .footer-bottom-area {
         background-color: rgb(39, 33, 47)!important;
       }
+
+      .mobile_menu {
+        position: unset !important;
+      }
     </style>
     @yield('stylesheet')
   </head>
