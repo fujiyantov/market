@@ -109,7 +109,7 @@
                                     <br>
                                     PT Balkondes (Admin Ceunah)
                                     <br>
-                                    <strong>0280256315</strong>
+                                    <strong>1123123121</strong>
                                 </p>
                             </div>
                             <div class="creat_account checkout-cap">
@@ -148,7 +148,7 @@
                                 </li>
                                 <li>
                                     <a href="#" style="font-weight: bold">No. WhatsApp
-                                        <span class="last">+62812-1173-5338</span>
+                                        <span class="last">+62856-1123-3451</span>
                                     </a>
                                 </li>
                             </ul>
@@ -156,7 +156,7 @@
                                 $messageAdmin = 'Halo, Saya mendapati kesulitan dalam melakukan checkout: ' . ucwords($type) . ' Budaya ' . ucwords($item->name) . '';
                             @endphp
                             <a class="btn btn-secondary w-100"
-                                href="https://api.whatsapp.com/send?phone=6281211735338&text={{ $messageAdmin }}"
+                                href="https://api.whatsapp.com/send?phone=62811861645&text={{ $messageAdmin }}"
                                 target="_blank">WhatsApp ke Admin</a>
                         </div>
                     </div>
