@@ -104,9 +104,9 @@ a {
     color: #635c5c
 }
 
-a:hover {
+/* a:hover {
     color: #fff
-}
+} */
 
 a:focus,
 a:hover {
@@ -687,7 +687,8 @@ li {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
-    text-transform: uppercase
+    /* text-transform: uppercase */
+    text-transform: capitalize;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
@@ -1170,7 +1171,7 @@ li {
 }
 
 .slider-height {
-    min-height: 820px;
+    min-height: 500px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center
@@ -1203,18 +1204,19 @@ li {
 
 .slider-bg1 {
     /* background-image: url(../img/hero/h1_hero.png) */
-    background-image: url(../img/hero/hero-2-m.jpg)
+    /* background-image: url(../img/hero/hero-2-m.jpg) */
+    background-color: #fff;
 }
 
 .slider-bg2 {
     background-image: url(../img/hero/hero-2-m.jpg)
-    /* background-image: url(../img/hero/h2_hero1.png) */
+        /* background-image: url(../img/hero/h2_hero1.png) */
 }
 
 .slider-area {
     margin-top: -1px;
     padding-right: 50px;
-    padding-bottom: 90px;
+    padding-bottom: 30px;
     background: #F2E1D9;
     position: relative
 }
@@ -1279,7 +1281,7 @@ li {
 }
 
 .slider-area .hero__caption {
-    padding: 39px 70px 56px 68px;
+    padding: 60px 0px 56px 68px;
     margin-left: -25px;
     margin-right: 25px;
     position: relative;
@@ -1322,11 +1324,11 @@ li {
 }
 
 .slider-area .hero__caption h1 {
-    font-size: 70px;
-    font-weight: 900;
+    font-size: 4rem;
+    font-weight: 700;
     margin-bottom: 14px;
-    line-height: 1.2;
-    text-transform: uppercase
+    line-height: 1.5;
+    text-transform: capitalize
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -1405,9 +1407,75 @@ li {
 }
 
 .new-arrival {
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 80px
 }
+
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    height: 100%;
+    transform: scale(1);
+    transition: 0.25s transform ease-in-out;
+}
+
+.card::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .7), rgba(0, 0, 0, .10))
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.img-cover {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.img-wrapper {
+    height: 100%;
+    /* margin-bottom: 20px;
+    margin-right: 20px; */
+    border-radius: 0.9375rem;
+    overflow: hidden;
+    position: relative;
+    transform: scale(1);
+    transition: 0.25s transform ease-in-out;
+    cursor: pointer;
+}
+
+/* .img-wrapper:hover {
+    transform: scale(1.1);
+} */
+
+.meta-wrapper {
+    z-index: 4;
+    color: #fff;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(0);
+    transition: .3s transform ease-in-out;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.meta-wrapper:hover {
+    transform: translateY(-25px);
+}
+
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .new-arrival {
@@ -1451,18 +1519,36 @@ li {
     }
 }
 
+.new-arrival-title {
+    font-size: 2.6rem;
+    font-weight: 500;
+    margin-bottom: 1.2em;
+}
+
 .new-arrival.new-arrival3 {
     padding-top: 0;
     padding-bottom: 0
 }
 
 .new-arrival .single-new-arrival {
-    border: 1px solid #F6F8FE
+    border: 0px solid #F6F8FE;
+    /* background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(0,0,0,51)) */
 }
 
 .new-arrival .single-new-arrival .popular-img {
+    height: 100%;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    border-radius: 0.9375rem;
     overflow: hidden;
-    position: relative
+    position: relative;
+    transform: scale(1.1) !important;
+    transition: 0.25s transform ease-in-out !important;
+    cursor: pointer;
+}
+
+.new-arrival .single-new-arrival .popular-img:hover {
+    transform: scale(1) !important;
 }
 
 .new-arrival .single-new-arrival .popular-img img {
@@ -1470,7 +1556,8 @@ li {
 }
 
 .new-arrival .single-new-arrival .popular-caption {
-    padding: 31px 15px;
+    /* padding: 31px 15px; */
+    margin-top: 1rem;
     -webkit-transition: .3s;
     -moz-transition: .3s;
     -o-transition: .3s;
@@ -1478,16 +1565,18 @@ li {
 }
 
 .new-arrival .single-new-arrival .popular-caption h3 a {
-    font-weight: 500;
-    font-size: 16px;
+    font-size: 1.7rem;
+    margin-bottom: 2px;
+    /* font-weight: 500; */
+    /* font-size: 16px;
     display: block;
     line-height: 1.7;
-    margin-bottom: 20px;
+    margin-bottom: 20px; */
     -webkit-transition: .3s;
     -moz-transition: .3s;
     -o-transition: .3s;
     transition: .3s;
-    text-decoration: underline transparent;
+    text-decoration: none;
     font-family: "Poppins", sans-serif
 }
 
@@ -1504,15 +1593,16 @@ li {
 }
 
 .new-arrival .single-new-arrival .popular-caption span {
-    color: #670000;
-    font-size: 20px;
+    font-size: 1.4rem;
+    /* color: #670000; */
+    color: #adb5bd !important;
     font-weight: 600;
-    display: block
+    /* display: block */
 }
 
 .single-new-arrival:hover .popular-caption h3 a {
-    color: inherit;
-    text-decoration: underline
+    /* color: inherit; */
+    text-decoration: none
 }
 
 .properties .nav-tabs {
@@ -4822,9 +4912,9 @@ li {
 }
 
 .hero-overly1::before {
-    background: -moz-linear-gradient(top, rgba(139, 129, 129, 0.4) 0%, rgba(141, 128, 130, 0.38) 1%, rgba(140, 129, 132, 0.36) 2%, rgba(142, 130, 130, 0.34) 3%, rgba(140, 128, 131, 0.32) 4%, rgba(142, 129, 132, 0.3) 5%, rgba(140, 129, 133, 0.28) 6%, rgba(143, 131, 131, 0.26) 7%, rgba(142, 130, 130, 0.24) 8%, rgba(143, 130, 130, 0.22) 9%, rgba(144, 130, 134, 0.2) 10%, rgba(143, 128, 133, 0.18) 11%, rgba(139, 128, 128, 0.16) 12%, rgba(137, 131, 131, 0.14) 13%, rgba(143, 128, 128, 0.12) 14%, rgba(136, 127, 127, 0.1) 15%, rgba(143, 133, 133, 0.08) 16%, rgba(146, 134, 134, 0.06) 17%, rgba(143, 128, 128, 0.05) 18%, rgba(139, 139, 139, 0.03) 19%, rgba(146, 146, 146, 0.02) 20%, rgba(0, 0, 0, 0) 21%, rgba(0, 0, 0, 0) 22%, rgba(0, 0, 0, 0) 100%);
+    /* background: -moz-linear-gradient(top, rgba(139, 129, 129, 0.4) 0%, rgba(141, 128, 130, 0.38) 1%, rgba(140, 129, 132, 0.36) 2%, rgba(142, 130, 130, 0.34) 3%, rgba(140, 128, 131, 0.32) 4%, rgba(142, 129, 132, 0.3) 5%, rgba(140, 129, 133, 0.28) 6%, rgba(143, 131, 131, 0.26) 7%, rgba(142, 130, 130, 0.24) 8%, rgba(143, 130, 130, 0.22) 9%, rgba(144, 130, 134, 0.2) 10%, rgba(143, 128, 133, 0.18) 11%, rgba(139, 128, 128, 0.16) 12%, rgba(137, 131, 131, 0.14) 13%, rgba(143, 128, 128, 0.12) 14%, rgba(136, 127, 127, 0.1) 15%, rgba(143, 133, 133, 0.08) 16%, rgba(146, 134, 134, 0.06) 17%, rgba(143, 128, 128, 0.05) 18%, rgba(139, 139, 139, 0.03) 19%, rgba(146, 146, 146, 0.02) 20%, rgba(0, 0, 0, 0) 21%, rgba(0, 0, 0, 0) 22%, rgba(0, 0, 0, 0) 100%);
     background: -webkit-linear-gradient(top, rgba(139, 129, 129, 0.4) 0%, rgba(141, 128, 130, 0.38) 1%, rgba(140, 129, 132, 0.36) 2%, rgba(142, 130, 130, 0.34) 3%, rgba(140, 128, 131, 0.32) 4%, rgba(142, 129, 132, 0.3) 5%, rgba(140, 129, 133, 0.28) 6%, rgba(143, 131, 131, 0.26) 7%, rgba(142, 130, 130, 0.24) 8%, rgba(143, 130, 130, 0.22) 9%, rgba(144, 130, 134, 0.2) 10%, rgba(143, 128, 133, 0.18) 11%, rgba(139, 128, 128, 0.16) 12%, rgba(137, 131, 131, 0.14) 13%, rgba(143, 128, 128, 0.12) 14%, rgba(136, 127, 127, 0.1) 15%, rgba(143, 133, 133, 0.08) 16%, rgba(146, 134, 134, 0.06) 17%, rgba(143, 128, 128, 0.05) 18%, rgba(139, 139, 139, 0.03) 19%, rgba(146, 146, 146, 0.02) 20%, rgba(0, 0, 0, 0) 21%, rgba(0, 0, 0, 0) 22%, rgba(0, 0, 0, 0) 100%);
-    background: linear-gradient(to bottom, rgba(139, 129, 129, 0.4) 0%, rgba(141, 128, 130, 0.38) 1%, rgba(140, 129, 132, 0.36) 2%, rgba(142, 130, 130, 0.34) 3%, rgba(140, 128, 131, 0.32) 4%, rgba(142, 129, 132, 0.3) 5%, rgba(140, 129, 133, 0.28) 6%, rgba(143, 131, 131, 0.26) 7%, rgba(142, 130, 130, 0.24) 8%, rgba(143, 130, 130, 0.22) 9%, rgba(144, 130, 134, 0.2) 10%, rgba(143, 128, 133, 0.18) 11%, rgba(139, 128, 128, 0.16) 12%, rgba(137, 131, 131, 0.14) 13%, rgba(143, 128, 128, 0.12) 14%, rgba(136, 127, 127, 0.1) 15%, rgba(143, 133, 133, 0.08) 16%, rgba(146, 134, 134, 0.06) 17%, rgba(143, 128, 128, 0.05) 18%, rgba(139, 139, 139, 0.03) 19%, rgba(146, 146, 146, 0.02) 20%, rgba(0, 0, 0, 0) 21%, rgba(0, 0, 0, 0) 22%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to bottom, rgba(139, 129, 129, 0.4) 0%, rgba(141, 128, 130, 0.38) 1%, rgba(140, 129, 132, 0.36) 2%, rgba(142, 130, 130, 0.34) 3%, rgba(140, 128, 131, 0.32) 4%, rgba(142, 129, 132, 0.3) 5%, rgba(140, 129, 133, 0.28) 6%, rgba(143, 131, 131, 0.26) 7%, rgba(142, 130, 130, 0.24) 8%, rgba(143, 130, 130, 0.22) 9%, rgba(144, 130, 134, 0.2) 10%, rgba(143, 128, 133, 0.18) 11%, rgba(139, 128, 128, 0.16) 12%, rgba(137, 131, 131, 0.14) 13%, rgba(143, 128, 128, 0.12) 14%, rgba(136, 127, 127, 0.1) 15%, rgba(143, 133, 133, 0.08) 16%, rgba(146, 134, 134, 0.06) 17%, rgba(143, 128, 128, 0.05) 18%, rgba(139, 139, 139, 0.03) 19%, rgba(146, 146, 146, 0.02) 20%, rgba(0, 0, 0, 0) 21%, rgba(0, 0, 0, 0) 22%, rgba(0, 0, 0, 0) 100%); */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#668b8181', endColorstr='#00000000', GradientType=0)
 }
 

@@ -47,7 +47,8 @@
         background-color: #fff !important;
       }
       .slider-area {
-        background: #ddd !important;
+        background: #fff !important;
+        /* background: #ddd !important; */
       }
       .header-sticky.sticky-bar {
         padding-left: 250px !important;
