@@ -7,8 +7,13 @@
                         <div class="single-footer-caption mb-50">
                             <div class="single-footer-caption mb-30">
                                 <div class="footer-logo mb-35">
-                                    <a href="index.html"><img src="{{ asset('/assets/img/logo/logo-kbkm.png') }}"
-                                            alt="" /></a>
+                                    <a href="{{ route('home') }}"><img src="{{ asset('/assets/img/logo/logo-kbkm.png') }}"
+                                            class="d-none d-lg-block d-xl-none" alt="" /></a>
+
+                                    {{-- D-MOBILE --}}
+                                    <a href="{{ route('home') }}"><img
+                                            src="{{ asset('/assets/img/logo/logo-kbkm.png') }}" width="100"
+                                            class="d-lg-none d-xl-block" alt="" /></a>
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">

@@ -66,6 +66,21 @@
       .mobile_menu {
         position: unset !important;
       }
+
+      .slicknav_btn {
+        float: left !important;
+      }
+
+      .slicknav_menu {
+        background: #fff !important;
+      }
+      .slicknav_btn {
+        border-radius: 0px !important;
+      }
+
+      .slicknav_nav a {
+        color: #000 !important;
+      }
     </style>
     @yield('stylesheet')
   </head>

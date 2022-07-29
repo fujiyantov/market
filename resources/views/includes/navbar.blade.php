@@ -4,17 +4,30 @@
             <div class="container-fluid">
                 <div class="row menu-wrapper align-items-center justify-content-between">
                     <div class="header-left d-flex align-items-center">
-                        <div class="logo">
-                            <a href="{{ route('home') }}" style="margin-left: 20px;"><img
-                                    src="{{ asset('/assets/img/logo/logo-kbkm-blue.png') }}" width="80"
-                                    alt="" /></a>
+                        {{-- <div class="logo"> --}}
+                        <div class="logo navbar-brand">
+                            <a href="{{ route('home') }}"><img src="{{ asset('/assets/img/logo/logo-kbkm-blue.png') }}"
+                                    width="80" alt="" /></a>
                         </div>
 
-                        <div class="logo2">
+                        <div class="logo navbar-brand">
+                            <a href="{{ route('home') }}"><img src="{{ asset('/assets/img/logo/logo-kbkm-blue.png') }}"
+                                    width="80" alt="" /></a>
+                        </div>
+                        <div class="logo navbar-brand">
+                            <a href="{{ route('home') }}"><img src="{{ asset('/assets/img/logo/logo-kbkm-blue.png') }}"
+                                    width="80" alt="" /></a>
+                        </div>
 
-                            <a href="index.html" style="margin-left: 20px"><img
-                                    src="{{ asset('/assets/img/logo/logo-kbkm-blue.png') }}" width="80"
-                                    alt="" /></a>
+                        <div class="logo2 navbar-brand">
+                            <a href="index.html"><img src="{{ asset('/assets/img/logo/logo-kbkm-blue.png') }}"
+                                    width="64" alt="" style="margin-right: 5px" /></a>
+
+                            <a href="index.html"><img src="{{ asset('/assets/img/logo/logo-kbkm-blue.png') }}"
+                                    width="64" alt="" style="margin-right: 5px" /></a>
+
+                            <a href="index.html"><img src="{{ asset('/assets/img/logo/logo-kbkm-blue.png') }}"
+                                    width="64" alt="" style="margin-right: 5px" /></a>
                         </div>
 
                         <div class="main-menu d-none d-lg-block">
