@@ -158,24 +158,46 @@
                     <div class="new-arrival new-arrival3">
                         <div class="row">
                             @foreach ($collection as $item)
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                                    <div class="single-new-arrival mb-50 text-center">
+                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 d-none d-lg-block d-xl-none">
+                                    <div class="single-new-arrival mb-50">
                                         <div class="popular-img">
                                             @if (substr($item->image, 0, 5) == 'https')
                                                 <img src="{{ $item->image }}" alt=""
-                                                    data-pagespeed-url-hash="3041166571"
-                                                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);" />
+                                                    data-pagespeed-url-hash="3041166571" />
                                             @else
                                                 <img src="{{ travelImageUrl($item->image) }}" alt=""
-                                                    data-pagespeed-url-hash="3041166571"
-                                                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);" />
+                                                    data-pagespeed-url-hash="3041166571" />
                                             @endif
                                         </div>
                                         <div class="popular-caption">
                                             <h3>
                                                 <a href="{{ route('travels.show', $item->id) }}">{{ $item->name }}</a>
                                             </h3>
-                                            <span>Rp {{ number_format($item->price) }}</span>
+                                            <span>Rp {{ number_format($item->price, 0, ',', '.') }},
+                                                {{ ucwords($item->village->name) }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- D-MOBILE --}}
+                                <div class="col-6 d-lg-none d-xl-block">
+                                    <div class="single-new-arrival mb-50 wow fadeInUp" data-wow-duration="1s"
+                                        data-wow-delay=".1s" style="margin-left: 10px; margin-bottom:30px">
+                                        <div class="popular-img" style="margin-right: 10px; margin-bottom: 15px">
+                                            @if (substr($item->image, 0, 5) == 'https')
+                                                <img src="{{ $item->image }}" alt=""
+                                                    data-pagespeed-url-hash="3041166571" />
+                                            @else
+                                                <img src="{{ travelImageUrl($item->image) }}" alt=""
+                                                    data-pagespeed-url-hash="3041166571" />
+                                            @endif
+                                        </div>
+                                        <div class="popular-caption">
+                                            <h3>
+                                                <a
+                                                    href="{{ route('travels.show', $item->id) }}">{{ $item->name }}</a>
+                                            </h3>
+                                            <span>Rp {{ number_format($item->price, 0, ',', '.') }},
                                         </div>
                                     </div>
                                 </div>

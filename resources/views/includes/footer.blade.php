@@ -72,7 +72,7 @@
                                 </script>
                                 All rights reserved ||
                                 by
-                                <a href="#" target="_blank">Balkondes Dev</a>
+                                <a href="#" target="_blank">Developer</a>
                             </p>
                         </div>
                     </div>

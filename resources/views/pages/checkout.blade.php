@@ -21,7 +21,7 @@
                         <div class="col-xl-6 col-lg-8 col-md-8">
                             <div class="hero__caption hero__caption2">
                                 <h1 data-animation="fadeInUp" data-delay=".4s">
-                                    Checkout Payment
+                                    Checkout
                                 </h1>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
@@ -43,28 +43,29 @@
 
     <section class="checkout_area section-padding40">
         <div class="container">
-            <div class="billing_details">
+            <div class="billing_details new-arrival new-arrival3">
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="order_box">
+                    <div class="col-xl-4 none d-lg-block d-xl-none">
+                        <div class="order_box single-new-arrival mb-50">
                             <div class="popular-img">
                                 @if (substr($item->image, 0, 5) == 'https')
-                                    <img class="img img-fluid" src="{{ $item->image }}" alt="" />
+                                    <img src="{{ $item->image }}" alt="" data-pagespeed-url-hash="3041166571" />
                                 @else
                                     @if ($type == 'produk')
-                                        <img class="img img-fluid" src="{{ productImageUrl($item->image) }}"
+                                        <img src="{{ productImageUrl($item->image) }}"
                                             alt="" />
                                     @else
-                                        <img class="img img-fluid" src="{{ travelImageUrl($item->image) }}"
+                                        <img src="{{ travelImageUrl($item->image) }}"
                                             alt="" />
                                     @endif
                                 @endif
                             </div>
                             <div class="popular-caption">
-                                <h3>
-                                    {{ $item->name }}
+                                <h3 style="margin-bottom: 0px">
+                                    <a href="{{ route('products.show', $item->id) }}">{{ $item->name }}</a>
                                 </h3>
-                                <span>Rp {{ number_format($item->price) }}</span>
+                                <span>Rp {{ number_format($item->price, 0, ',', '.') }},
+                                    {{ ucwords($item->village->name) }}</span>
                             </div>
                         </div>
                     </div>

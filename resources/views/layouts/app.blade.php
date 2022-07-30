@@ -47,7 +47,7 @@
         background-color: #fff !important;
       }
       .slider-area {
-        background: #fff !important;
+        /* background: #fff !important; */
         /* background: #ddd !important; */
       }
       .header-sticky.sticky-bar {
@@ -80,6 +80,19 @@
 
       .slicknav_nav a {
         color: #000 !important;
+      }
+
+      .slicknav_btn {
+        background-color: transparent;
+      }
+      .slicknav_menu .slicknav_menutxt {
+        color: #000 !important;
+        text-shadow: none;
+        font-weight: 600;
+      }
+
+      .slicknav_menu .slicknav_icon-bar {
+        display: none;
       }
     </style>
     @yield('stylesheet')

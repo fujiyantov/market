@@ -76,7 +76,7 @@
 
 @section('container')
     <!-- Section Hero -->
-    <div class="slider-area">
+    <div class="slider-area" style="background: #fff">
         {{-- <div class="slider-active"> --}}
         <div class="single-slider hero-overly1 slider-height d-flex align-items-center slider-bg1">
             <div class="container">

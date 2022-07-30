@@ -47,7 +47,7 @@
                 <div class="col-xl-3 col-lg-3 col-md-4">
                     <div class="row">
                         <div class="col-12">
-                            <div class="small-tittle mb-45">
+                            <div class="small-tittle mb-45" id="myBtn">
                                 <div class="ion">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                         width="20px" height="12px">
@@ -61,7 +61,85 @@
                         </div>
                     </div>
 
-                    <div class="category-listing mb-50">
+                    {{-- D-MOBILE --}}
+                    <div class="collapse d-lg-none d-xl-block" id="myCollapse">
+                        <div class="category-listing mb-50">
+                            <div class="categories-wrapper">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="select-categories">
+                                            <select name="select1">
+                                                @foreach ($categories as $category)
+                                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="select-categories">
+                                            <select name="select4">
+                                                <option value="">Price range</option>
+                                                <option value="">Rp 10.000 to Rp 100.000</option>
+                                                <option value="">Rp 100.000 to Rp 1.000.000</option>
+                                                <option value="">Rp 1.000.000 to Rp 5.000.000</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="range-slider mt-50">
+                                <div class="small-tittle small-tittle2">
+                                    <h4>Price Range</h4>
+                                </div>
+                                <div class="range_item">
+                                    <input type="text" class="js-range-slider" value="" />
+                                    <div class="d-flex align-items-center">
+                                        <div class="price_text">
+                                            <p>Price :</p>
+                                        </div>
+                                        <div class="price_value d-flex justify-content-center">
+                                            <input type="text" class="js-input-from" id="amount" readonly />
+                                            <span>to</span>
+                                            <input type="text" class="js-input-to" id="amount" readonly />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="select-checkbox mt-30 mb-30">
+                                <div class="small-tittle">
+                                    <h4>Latest Product</h4>
+                                </div>
+                                <label class="container">Any
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Today
+                                    <input type="checkbox" checked />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Last 2 days
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Last 5 days
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Last 10 days
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Last 15 days
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-listing mb-50 d-none d-lg-block d-xl-none">
                         <div class="categories-wrapper">
                             <div class="row">
                                 <div class="col-12">
@@ -158,22 +236,45 @@
                     <div class="new-arrival new-arrival3">
                         <div class="row">
                             @foreach ($collection as $item)
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                                    <div class="single-new-arrival mb-50 text-center">
+                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 d-none d-lg-block d-xl-none">
+                                    <div class="single-new-arrival mb-50">
                                         <div class="popular-img">
                                             @if (substr($item->image, 0, 5) == 'https')
                                                 <img src="{{ $item->image }}" alt=""
-                                                    data-pagespeed-url-hash="3041166571"/>
+                                                    data-pagespeed-url-hash="3041166571" />
                                             @else
                                                 <img src="{{ productImageUrl($item->image) }}" alt=""
-                                                    data-pagespeed-url-hash="3041166571"/>
+                                                    data-pagespeed-url-hash="3041166571" />
                                             @endif
                                         </div>
                                         <div class="popular-caption">
                                             <h3>
                                                 <a href="{{ route('products.show', $item->id) }}">{{ $item->name }}</a>
                                             </h3>
-                                            <span>Rp {{ number_format($item->price) }}</span>
+                                            <span>Rp {{ number_format($item->price, 0, ',', '.') }},
+                                                {{ ucwords($item->village->name) }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- D-MOBILE --}}
+                                <div class="col-6 d-lg-none d-xl-block">
+                                    <div class="single-new-arrival mb-50 wow fadeInUp" data-wow-duration="1s"
+                                        data-wow-delay=".1s" style="margin-left: 10px; margin-bottom:30px">
+                                        <div class="popular-img" style="margin-right: 10px; margin-bottom: 15px">
+                                            @if (substr($item->image, 0, 5) == 'https')
+                                                <img src="{{ $item->image }}" alt=""
+                                                    data-pagespeed-url-hash="3041166571" />
+                                            @else
+                                                <img src="{{ productImageUrl($item->image) }}" alt=""
+                                                    data-pagespeed-url-hash="3041166571" />
+                                            @endif
+                                        </div>
+                                        <div class="popular-caption">
+                                            <h3>
+                                                <a href="{{ route('products.show', $item->id) }}">{{ $item->name }}</a>
+                                            </h3>
+                                            <span>Rp {{ number_format($item->price, 0, ',', '.') }},
                                         </div>
                                     </div>
                                 </div>
@@ -190,4 +291,12 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script>
+        $("#myBtn").click(function() {
+            $("#myCollapse").collapse("toggle");
+        });
+    </script>
 @endsection

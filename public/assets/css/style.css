@@ -785,7 +785,8 @@ li {
 
 @media (max-width: 575px) {
     .header-area .main-header {
-        padding: 20px 3px
+        /* padding: 20px 3px */
+        padding: 5px 3px
     }
 }
 
@@ -1201,7 +1202,8 @@ li {
 
 @media (max-width: 575px) {
     .slider-height2 {
-        min-height: 300px
+        min-height: 150px
+        /* min-height: 300px */
     }
 }
 
@@ -1217,7 +1219,7 @@ li {
 }
 
 .slider-area {
-    margin-top: -1px;
+    margin-top: 10px;
     padding-right: 50px;
     padding-bottom: 30px;
     background: #F2E1D9;
@@ -1248,7 +1250,8 @@ li {
 @media (max-width: 575px) {
     .slider-area {
         padding-right: 0;
-        padding-bottom: 0px
+        /* padding-bottom: 0px */
+        padding-bottom: 30px
     }
 }
 
