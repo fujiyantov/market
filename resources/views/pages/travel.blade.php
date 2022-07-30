@@ -291,3 +291,11 @@
         </div>
     </div>
 @endsection
+
+@section('script')
+    <script>
+        $("#myBtn").click(function() {
+            $("#myCollapse").collapse("toggle");
+        });
+    </script>
+@endsection
