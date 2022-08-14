@@ -34,6 +34,7 @@ Route::get('/travel-details/{travel_id}', [TravelController::class, 'show'])->na
 
 // Checkout
 Route::get('/checkout/{type}/{id}/{slug}', [CheckoutController::class, 'checkout'])->name('checkout');
+Route::post('/checkout/{type}/{id}/{slug}', [CheckoutController::class, 'store'])->name('checkout.store');
 
 // Contact
 Route::get('/contact', [MasterController::class, 'contact'])->name('contact');

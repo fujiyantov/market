@@ -305,7 +305,7 @@
                                     </li>
                                 </ul>
                                 <p>Outstanding</p>
-                                <form class="row contact_form" action="contact_process.php" method="post" novalidate>
+                                <form class="row contact_form" action="#" method="post" novalidate>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <input type="text" class="form-control" name="name"

@@ -283,7 +283,7 @@
 
                         <div class="row justify-content-center">
                             <div class="room-btn mt-20">
-                                <a href="#" class="border-btn">MorLe</a>
+                                <a href="#" class="border-btn">More</a>
                             </div>
                         </div>
                     </div>

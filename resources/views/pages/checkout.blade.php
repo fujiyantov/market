@@ -52,11 +52,9 @@
                                     <img src="{{ $item->image }}" alt="" data-pagespeed-url-hash="3041166571" />
                                 @else
                                     @if ($type == 'produk')
-                                        <img src="{{ productImageUrl($item->image) }}"
-                                            alt="" />
+                                        <img src="{{ productImageUrl($item->image) }}" alt="" />
                                     @else
-                                        <img src="{{ travelImageUrl($item->image) }}"
-                                            alt="" />
+                                        <img src="{{ travelImageUrl($item->image) }}" alt="" />
                                     @endif
                                 @endif
                             </div>
@@ -119,10 +117,39 @@
                                     <a href="#">terms & conditions*</a>
                                 </label>
                             </div>
+
+                            <form class="row contact_form mb-4"
+                                action="{{ route('checkout.store', [$type, $item->id, $item->name]) }}" method="post"
+                                novalidate>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control name" name="name"
+                                            placeholder="Your Full name" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control phone" name="number"
+                                            placeholder="Phone Number" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-left">
+                                    @php
+                                        if ($type == 'produk') {
+                                            $btnMessage = 'Beli Produk';
+                                        } else {
+                                            $btnMessage = 'Pesan Travel';
+                                        }
+                                    @endphp
+                                    <button type="submit" value="submit" id="form-checkout" class="btn w-100 btn-checkout">
+                                        {{ $btnMessage }}
+                                    </button>
+                                </div>
+                            </form>
                             @php
                                 $message = 'Halo, Saya sudah melakukan pembayaran ' . ucwords($type) . ' Budaya ' . ucwords($item->name) . '. Berikut saya lampirkan foto bukti pembayaran:';
                             @endphp
-                            <a class="btn w-100"
+                            <a class="btn w-100 btn-confirmation"
                                 href="https://api.whatsapp.com/send?phone=6281211735338&text={{ $message }}"
                                 target="_blank">Konfirmasi
                                 Pembayaran</a>
@@ -168,4 +195,88 @@
 @endsection
 
 @section('script')
+    <script>
+        let btnMessage = "{{ $btnMessage }}"
+        $('.btn-confirmation').hide();
+        $("#form-checkout").on('click', function(e) {
+            e.preventDefault(); // prevent actual form submit
+
+            var name = $('.name').val()
+            var phone = $('.phone').val()
+
+            if (name == '') {
+                alert('Name is required')
+                return
+            }
+
+            if (phone == '') {
+                alert('Phone is required')
+                return
+            }
+
+            let checkPhone = phonenumber(phone)
+            if (checkPhone == false) {
+                return
+            }
+
+            if (phone.length < 11 || phone.length > 14) {
+                alert("Not a valid Phone Number");
+                return false;
+            }
+
+
+            let text = "Apakah kamu yakin akan membeli {{ $item->name }}";
+            if (confirm(text) == true) {
+                var form = $(this);
+                let data = {
+                    _token: "{{ csrf_token() }}",
+                    'name': name,
+                    'phone': phone,
+                    'code': {{ $code }}
+                }
+
+                $('.btn-checkout').prop('disabled', true);
+                $('.btn-checkout').text('Loading...')
+
+                var url = form.attr('action');
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: data,
+                    success: function(res) {
+                        console.log(res);
+                        if (res == 200) {
+                            alert('Pesanan kamu berhasil diproses, segera konfirmasi pembayaran')
+                            // $('.btn-checkout').text('Beli')
+                            $('.btn-checkout').hide();
+                            $('.btn-confirmation').show();
+                        }
+
+                        if (res == 422) {
+                            alert('Nama/Phone yang kamu masukan tidak sesuai')
+                            $('.btn-checkout').text(btnMessage)
+                            $('.btn-checkout').prop('disabled', false);
+
+                        }
+
+                        if (res == 400) {
+                            alert('Pesanan kamu tidak ditemukan')
+                            $('.btn-checkout').text(btnMessage)
+                            $('.btn-checkout').prop('disabled', false);
+                        }
+                    }
+                });
+            }
+        });
+
+        function phonenumber(inputtxt) {
+            var phoneno = /^[0-9]+$/;
+            if (inputtxt.match(phoneno)) {
+                return true;
+            } else {
+                alert("Not a valid Phone Number");
+                return false;
+            }
+        }
+    </script>
 @endsection
