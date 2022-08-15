@@ -24,7 +24,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $item = Product::findOrFail($id);
-        $testimonials = ProductTestimonial::where('product_id', $id)->get();
+        $testimonials = ProductTestimonial::where('product_id', $id)->orderBy('created_at', 'desc')->get();
 
         return view('pages.product-detail', [
             'item' => $item,

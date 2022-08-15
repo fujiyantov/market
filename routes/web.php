@@ -38,3 +38,6 @@ Route::post('/checkout/{type}/{id}/{slug}', [CheckoutController::class, 'store']
 
 // Contact
 Route::get('/contact', [MasterController::class, 'contact'])->name('contact');
+
+// Discuss
+Route::post('/discuss/{type}/{id}/{slug}', [MasterController::class, 'discuss'])->name('discuss.store');

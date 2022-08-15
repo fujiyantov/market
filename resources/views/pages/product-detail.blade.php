@@ -7,7 +7,7 @@
 @section('stylesheet')
     <style>
         .section-padding40 {
-            padding-bottom: 10px!important
+            padding-bottom: 10px !important
         }
     </style>
 @endsection
@@ -72,7 +72,7 @@
                         <ul class="list">
                             <li>
                                 <a class="active" href="#">
-                                    <span>Category</span> :  {{ $item->categoryItem->name }}</a>
+                                    <span>Category</span> : {{ $item->categoryItem->name }}</a>
                             </li>
                             <li>
                                 <a href="#"> <span>Availibility</span> : In Stock</a>
@@ -82,7 +82,7 @@
                             {{ $item->description }}
                         </p>
                         <div class="card_area">
-                           {{--  <div class="product_count d-inline-block">
+                            {{-- <div class="product_count d-inline-block">
                                 <span class="inumber-decrement" style="cursor: pointer">
                                     <i class="fa fa-minus"></i></span>
                                 <input class="input-number" type="text" value="1" min="0" max="10" />
@@ -90,8 +90,9 @@
                                     <i class="fa fa-plus"></i></span>
                             </div> --}}
                             <div class="add_to_cart">
-                                <a href="{{ route('checkout', ['produk', $item->id, Str::slug($item->name)]) }}" class="btn">Beli Produk</a>
-                                <a href="#" class="like_us"> <i class="fa fa-heart"></i> </a>
+                                <a href="{{ route('checkout', ['produk', $item->id, Str::slug($item->name)]) }}"
+                                    class="btn">Beli Produk</a>
+                                {{-- <a href="#" class="like_us"> <i class="fa fa-heart"></i> </a> --}}
                             </div>
                         </div>
                     </div>
@@ -109,7 +110,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab"
-                        aria-controls="review" aria-selected="false">Reviews</a>
+                        aria-controls="review" aria-selected="false">Diskusi</a>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
@@ -193,7 +194,7 @@
                 <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
                     <div class="row">
                         <div class="col-lg-6">
-                            <div class="row total_rate">
+                            {{-- <div class="row total_rate">
                                 <div class="col-6">
                                     <div class="box_total">
                                         <h5>Overall</h5>
@@ -248,22 +249,25 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="review_list">
-                                @foreach ($testimonials->take(2) as $val)
+                                @foreach ($testimonials->take(5) as $val)
                                     <div class="review_item">
                                         <div class="media">
                                             <div class="d-flex">
-                                                <img src="https://ui-avatars.com/api/?name=John+Doe"
+                                                <img class="img" style="border-radius: 50%" width="48"
+                                                    src="https://ui-avatars.com/api/?name={{ $val->name }}
                                                     alt="" />
                                             </div>
                                             <div class="media-body">
-                                                <h4>{{ $val->user->name }}</h4>
+                                                <h4>{{ $val->name }}<small
+                                                        style="margin-left: 10px; color:#646D77">{{ $val->created_at->format('d M y') }}</small>
+                                                </h4>
+                                                {{-- <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i> --}}
                                             </div>
                                         </div>
                                         <p>
@@ -275,8 +279,8 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="review_box">
-                                <h4>Add a Review</h4>
-                                <p>Your Rating:</p>
+                                <h4>Tambah Diskusi</h4>
+                                {{-- <p>Your Rating:</p>
                                 <ul class="list">
                                     <li>
                                         <a href="#">
@@ -304,8 +308,11 @@
                                         </a>
                                     </li>
                                 </ul>
-                                <p>Outstanding</p>
-                                <form class="row contact_form" action="#" method="post" novalidate>
+                                <p>Outstanding</p> --}}
+                                <form class="row contact_form"
+                                    action="{{ route('discuss.store', ['produk', $item->id, Str::slug($item->name)]) }}"
+                                    method="post" novalidate>
+                                    @csrf
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <input type="text" class="form-control" name="name"
@@ -314,19 +321,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" name="email"
-                                                placeholder="Email Address" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="number"
-                                                placeholder="Phone Number" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <textarea class="form-control" name="message" rows="1" placeholder="Review"></textarea>
+                                            <textarea class="form-control" name="comment" rows="1" placeholder="Comment" style="height: 200px"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-12 text-right">
