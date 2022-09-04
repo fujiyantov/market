@@ -101,21 +101,21 @@
                                     <img class="img mb-3" src="{{ asset('assets/img/icon/map.png') }}" alt=""
                                         width="52" />
                                     <h5 style="font-size: 1.5rem">
-                                        6 Desa
+                                        {{ count($villages) }} Desa
                                     </h5>
                                 </div>
                                 <div class="col">
                                     <img class="img mb-3" src="{{ asset('assets/img/icon/product.png') }}" alt=""
                                         width="52" />
                                     <h5 style="font-size: 1.5rem">
-                                        184 Produk
+                                        {{ count($products) }} Produk
                                     </h5>
                                 </div>
                                 <div class="col">
                                     <img class="img mb-3" src="{{ asset('assets/img/icon/traveller.png') }}" alt=""
                                         width="52" />
                                     <h5 style="font-size: 1.5rem">
-                                        34 Traveller
+                                        {{ count($travels) }} Travel
                                     </h5>
                                 </div>
                             </div>
