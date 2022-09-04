@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bank;
 use App\Models\Product;
 use App\Models\Transaction;
 use App\Models\Trip;
@@ -25,9 +26,12 @@ class CheckoutController extends Controller
                 break;
         }
 
+        $banks = Bank::latest()->first();
+
         return view('pages.checkout', [
             'item' => $item,
             'type' => $type,
+            'bank' => $banks,
         ]);
     }
 

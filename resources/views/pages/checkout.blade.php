@@ -103,12 +103,12 @@
                                     <b>Transfer Pembayaran</b>
                                     <br>
                                     <br>
-                                    <img class="img img-fluid mb-4" src="{{ asset('/assets/banks/logo_bca.png') }}"
+                                    <img class="img img-fluid mb-4" src="{{ env('STORAGE_URL_PROD') . '/banks/images/' . $bank->image; }}"
                                         alt="" width="20%" />
                                     <br>
-                                    PT Balkondes (Admin Ceunah)
+                                    {{ $bank->account_holder }}
                                     <br>
-                                    <strong>1123123121</strong>
+                                    <strong>{{ $bank->account_number }}</strong>
                                 </p>
                             </div>
                             <div class="creat_account checkout-cap">
