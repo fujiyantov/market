@@ -308,10 +308,6 @@
             <p>
                 {{ $sectionTravel->description }}
             </p>
-            {{-- <p class="pera-bottom">
-                vel consequat elit tincidunt et. Etiam in quam ut purus tempor
-                commodo. Maecenas bibendum ligula in commodo fringilla.
-            </p> --}}
             <a href="#" class="btn">Discover More</a>
         </div>
     </div>
