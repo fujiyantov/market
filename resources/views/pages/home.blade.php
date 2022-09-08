@@ -13,64 +13,64 @@
         }
 
         /* &.card-featured {
-                                                                                    overflow: hidden;
-                                                                                    cursor: pointer;
-                                                                                    height: 100%;
+                                                                                            overflow: hidden;
+                                                                                            cursor: pointer;
+                                                                                            height: 100%;
 
-                                                                                    &:after {
-                                                                                        position: absolute;
-                                                                                        content: "";
-                                                                                        top: 0;
-                                                                                        bottom: 0;
-                                                                                        left: 0;
-                                                                                        right: 0;
-                                                                                        transform: scale(1.1);
-                                                                                        transition: 0.5s transform ease-in-out;
-                                                                                        z-index: 2;
+                                                                                            &:after {
+                                                                                                position: absolute;
+                                                                                                content: "";
+                                                                                                top: 0;
+                                                                                                bottom: 0;
+                                                                                                left: 0;
+                                                                                                right: 0;
+                                                                                                transform: scale(1.1);
+                                                                                                transition: 0.5s transform ease-in-out;
+                                                                                                z-index: 2;
 
-                                                                                    }
+                                                                                            }
 
-                                                                                    .img-wrapper {
-                                                                                        z-index: 1;
-                                                                                        margin: 0;
-                                                                                        position: absolute;
-                                                                                        top: 0;
-                                                                                        bottom: 0;
-                                                                                        left: 0;
-                                                                                        right: 0;
-                                                                                        transform: scale(1.1);
-                                                                                        transition: 0.25s transform ease-in-out;
-                                                                                    }
+                                                                                            .img-wrapper {
+                                                                                                z-index: 1;
+                                                                                                margin: 0;
+                                                                                                position: absolute;
+                                                                                                top: 0;
+                                                                                                bottom: 0;
+                                                                                                left: 0;
+                                                                                                right: 0;
+                                                                                                transform: scale(1.1);
+                                                                                                transition: 0.25s transform ease-in-out;
+                                                                                            }
 
-                                                                                    .meta-wrapper {
-                                                                                        z-index: 4;
-                                                                                        color: $white;
-                                                                                        padding: 20px;
-                                                                                        position: absolute;
-                                                                                        top: 0;
-                                                                                        bottom: 0;
-                                                                                        width: 100%;
-                                                                                        transform: translateY(0);
-                                                                                        transition: .3s transform ease-in-out;
-                                                                                        display: flex;
-                                                                                        justify-content: flex-end;
-                                                                                        flex-direction: column;
-                                                                                    }
+                                                                                            .meta-wrapper {
+                                                                                                z-index: 4;
+                                                                                                color: $white;
+                                                                                                padding: 20px;
+                                                                                                position: absolute;
+                                                                                                top: 0;
+                                                                                                bottom: 0;
+                                                                                                width: 100%;
+                                                                                                transform: translateY(0);
+                                                                                                transition: .3s transform ease-in-out;
+                                                                                                display: flex;
+                                                                                                justify-content: flex-end;
+                                                                                                flex-direction: column;
+                                                                                            }
 
-                                                                                    &:hover {
-                                                                                        .meta-wrapper {
-                                                                                            transform: translateY(-10px);
-                                                                                        }
+                                                                                            &:hover {
+                                                                                                .meta-wrapper {
+                                                                                                    transform: translateY(-10px);
+                                                                                                }
 
-                                                                                        &:after {
-                                                                                            transform: scale(1);
-                                                                                        }
+                                                                                                &:after {
+                                                                                                    transform: scale(1);
+                                                                                                }
 
-                                                                                        .img-wrapper {
-                                                                                            transform: scale(1);
-                                                                                        }
-                                                                                    }
-                                                                                } */
+                                                                                                .img-wrapper {
+                                                                                                    transform: scale(1);
+                                                                                                }
+                                                                                            }
+                                                                                        } */
     </style>
 @endsection
 
@@ -290,11 +290,13 @@
                 @endforeach
             </div>
 
-            <div class="row justify-content-center">
-                <div class="room-btn">
-                    <a href="{{ route('products.index') }}" class="border-btn">Lihat Semua Produk</a>
+            @if (count($products))
+                <div class="row justify-content-center">
+                    <div class="room-btn">
+                        <a href="{{ route('products.index') }}" class="border-btn">Lihat Semua Produk</a>
+                    </div>
                 </div>
-            </div>
+            @endif
         </div>
     </section>
 
@@ -333,11 +335,13 @@
                 @foreach ($travelCategories as $travelCategory)
                     <div class="col-12">
                         <h3 class="new-arrival-title wow fadeInUp  d-none d-lg-block d-xl-none" data-wow-duration="1s"
-                            data-wow-delay=".1s" style="margin-left: -10px">{{ count($travelCategory->travel) > 0 ? $travelCategory->name : '' }}</h3>
+                            data-wow-delay=".1s" style="margin-left: -10px">
+                            {{ count($travelCategory->travel) > 0 ? $travelCategory->name : '' }}</h3>
 
                         {{-- D-MOBILE --}}
                         <h3 class="new-arrival-title text-center wow fadeInUp d-lg-none d-xl-block" data-wow-duration="1s"
-                            data-wow-delay=".1s" style="margin-left: -10px">{{ count($travelCategory->travel) > 0 ? $travelCategory->name : '' }}</h3>
+                            data-wow-delay=".1s" style="margin-left: -10px">
+                            {{ count($travelCategory->travel) > 0 ? $travelCategory->name : '' }}</h3>
                     </div>
                     @foreach ($travelCategory->travel->take(4) as $travel)
                         <div class="col-lg-3 col-md-6 col-sm-6 d-none d-lg-block d-xl-none">
@@ -388,11 +392,13 @@
                 @endforeach
             </div>
 
-            <div class="row justify-content-center">
-                <div class="room-btn">
-                    <a href="{{ route('travels.index') }}" class="border-btn">Lihat Semua Travel</a>
+            @if (count($travels) > 0)
+                <div class="row justify-content-center">
+                    <div class="room-btn">
+                        <a href="{{ route('travels.index') }}" class="border-btn">Lihat Semua Travel</a>
+                    </div>
                 </div>
-            </div>
+            @endif
         </div>
     </div>
 
