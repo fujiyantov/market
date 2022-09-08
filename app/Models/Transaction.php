@@ -22,4 +22,9 @@ class Transaction extends Model
         'complete_date',
         'is_read',
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }
