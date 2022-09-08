@@ -310,7 +310,7 @@
     </section>
 
     <div class="visit-tailor-area fix">
-        <div class="tailor-offers"></div>
+        <div class="tailor-offers" style="background: url('{{ env('STORAGE_URL_PROD') . '/sections/images/' . $sectionTravel->image }}')!important"></div>
 
         <div class="tailor-details">
             <h2>
