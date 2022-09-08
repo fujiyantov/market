@@ -31,8 +31,8 @@ class HomeController extends Controller
 
         $transactionHeroID = 0;
         $transactionID = [];
-        $transactionHero = null;
-        $transaction = null;
+        $transactionHero = [];
+        $transaction = [];
 
         $collections = Transaction::where('type', 'produk')->select('product_id', DB::raw('count(*) as total'))->groupBy('product_id')->orderBy('total', 'desc')->take(5)->get();
         if (count($collections) > 0) {
