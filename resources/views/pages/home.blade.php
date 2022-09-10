@@ -13,64 +13,64 @@
         }
 
         /* &.card-featured {
-                                                                                                    overflow: hidden;
-                                                                                                    cursor: pointer;
-                                                                                                    height: 100%;
+            overflow: hidden;
+            cursor: pointer;
+            height: 100%;
 
-                                                                                                    &:after {
-                                                                                                        position: absolute;
-                                                                                                        content: "";
-                                                                                                        top: 0;
-                                                                                                        bottom: 0;
-                                                                                                        left: 0;
-                                                                                                        right: 0;
-                                                                                                        transform: scale(1.1);
-                                                                                                        transition: 0.5s transform ease-in-out;
-                                                                                                        z-index: 2;
+            &:after {
+                position: absolute;
+                content: "";
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                transform: scale(1.1);
+                transition: 0.5s transform ease-in-out;
+                z-index: 2;
 
-                                                                                                    }
+            }
 
-                                                                                                    .img-wrapper {
-                                                                                                        z-index: 1;
-                                                                                                        margin: 0;
-                                                                                                        position: absolute;
-                                                                                                        top: 0;
-                                                                                                        bottom: 0;
-                                                                                                        left: 0;
-                                                                                                        right: 0;
-                                                                                                        transform: scale(1.1);
-                                                                                                        transition: 0.25s transform ease-in-out;
-                                                                                                    }
+            .img-wrapper {
+                z-index: 1;
+                margin: 0;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                transform: scale(1.1);
+                transition: 0.25s transform ease-in-out;
+            }
 
-                                                                                                    .meta-wrapper {
-                                                                                                        z-index: 4;
-                                                                                                        color: $white;
-                                                                                                        padding: 20px;
-                                                                                                        position: absolute;
-                                                                                                        top: 0;
-                                                                                                        bottom: 0;
-                                                                                                        width: 100%;
-                                                                                                        transform: translateY(0);
-                                                                                                        transition: .3s transform ease-in-out;
-                                                                                                        display: flex;
-                                                                                                        justify-content: flex-end;
-                                                                                                        flex-direction: column;
-                                                                                                    }
+            .meta-wrapper {
+                z-index: 4;
+                color: $white;
+                padding: 20px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 100%;
+                transform: translateY(0);
+                transition: .3s transform ease-in-out;
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: column;
+            }
 
-                                                                                                    &:hover {
-                                                                                                        .meta-wrapper {
-                                                                                                            transform: translateY(-10px);
-                                                                                                        }
+            &:hover {
+                .meta-wrapper {
+                    transform: translateY(-10px);
+                }
 
-                                                                                                        &:after {
-                                                                                                            transform: scale(1);
-                                                                                                        }
+                &:after {
+                    transform: scale(1);
+                }
 
-                                                                                                        .img-wrapper {
-                                                                                                            transform: scale(1);
-                                                                                                        }
-                                                                                                    }
-                                                                                                } */
+                .img-wrapper {
+                    transform: scale(1);
+                }
+            }
+        } */
     </style>
 @endsection
 
@@ -92,7 +92,7 @@
                             </p>
 
                             <div class="hero__btn" data-animation="fadeInUp" data-delay=".7s">
-                                <a href="#" class="btn hero-btn">Start Me Now</a>
+                                <a href="#" class="btn hero-btn">Mulai Sekarang</a>
                             </div>
 
                             <div class="row mt-5 mb-3 pt-10">
@@ -143,12 +143,9 @@
                     <div class="col-xl-7 col-lg-8 col-md-10">
                         <div class="section-tittle mb-60 text-center wow fadeInUp" data-wow-duration="1s"
                             data-wow-delay=".2s">
-                            <h2>Most Picked</h2>
+                            <h2>Produk Favorit</h2>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                                mattis purus nisl, vel consequat elit tincidunt et. Etiam in
-                                quam ut purus tempor commodo. Maecenas bibendum ligula in
-                                commodo fringilla.
+                                Rekomendasi produk favorit unggulan berbasis kearifan lokal dan nilainilai budaya bangsa
                             </p>
                         </div>
                     </div>
@@ -319,7 +316,7 @@
             <p>
                 {{ $sectionTravel->description }}
             </p>
-            <a href="#" class="btn">Discover More</a>
+            <a href="#" class="btn">Jelajah Lebih Lanjut</a>
         </div>
     </div>
 
@@ -330,10 +327,9 @@
                 <div class="col-xl-6 col-lg-8 col-md-10">
                     <div class="section-tittle mb-60 text-center wow fadeInUp" data-wow-duration="2s"
                         data-wow-delay=".2s">
-                        <h2>Destination Favorite</h2>
+                        <h2>Tujuan Wisata Favorit</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                            mattis purus nisl, vel consequat elit tincidunt et.
+                            Rencanakan destinasimu bersama kami, menikmati keidahan budaya dan alam sekitar Borobudur.
                         </p>
                     </div>
                 </div>
