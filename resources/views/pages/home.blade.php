@@ -13,64 +13,64 @@
         }
 
         /* &.card-featured {
-            overflow: hidden;
-            cursor: pointer;
-            height: 100%;
-
-            &:after {
-                position: absolute;
-                content: "";
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                transform: scale(1.1);
-                transition: 0.5s transform ease-in-out;
-                z-index: 2;
-
-            }
-
-            .img-wrapper {
-                z-index: 1;
-                margin: 0;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                transform: scale(1.1);
-                transition: 0.25s transform ease-in-out;
-            }
-
-            .meta-wrapper {
-                z-index: 4;
-                color: $white;
-                padding: 20px;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                width: 100%;
-                transform: translateY(0);
-                transition: .3s transform ease-in-out;
-                display: flex;
-                justify-content: flex-end;
-                flex-direction: column;
-            }
-
-            &:hover {
-                .meta-wrapper {
-                    transform: translateY(-10px);
-                }
+                overflow: hidden;
+                cursor: pointer;
+                height: 100%;
 
                 &:after {
-                    transform: scale(1);
+                    position: absolute;
+                    content: "";
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    transform: scale(1.1);
+                    transition: 0.5s transform ease-in-out;
+                    z-index: 2;
+
                 }
 
                 .img-wrapper {
-                    transform: scale(1);
+                    z-index: 1;
+                    margin: 0;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    transform: scale(1.1);
+                    transition: 0.25s transform ease-in-out;
                 }
-            }
-        } */
+
+                .meta-wrapper {
+                    z-index: 4;
+                    color: $white;
+                    padding: 20px;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    width: 100%;
+                    transform: translateY(0);
+                    transition: .3s transform ease-in-out;
+                    display: flex;
+                    justify-content: flex-end;
+                    flex-direction: column;
+                }
+
+                &:hover {
+                    .meta-wrapper {
+                        transform: translateY(-10px);
+                    }
+
+                    &:after {
+                        transform: scale(1);
+                    }
+
+                    .img-wrapper {
+                        transform: scale(1);
+                    }
+                }
+            } */
     </style>
 @endsection
 
@@ -84,11 +84,11 @@
                     <div class="col-xl-6 col-lg-8 col-md-8">
                         <div class="hero__caption">
                             <h1 data-animation="fadeInUp" data-delay=".4s">
-                                {{ $sectionHero->title }}
+                                {{ isset($sectionHero) ? $sectionHero->title : null }}
                             </h1>
 
                             <p data-animation="fadeInUp" data-delay=".6s">
-                                {{ $sectionHero->description }}
+                                {{ isset($sectionHero) ? $sectionHero->description : null }}
                             </p>
 
                             <div class="hero__btn" data-animation="fadeInUp" data-delay=".7s">
@@ -123,9 +123,11 @@
 
                     <div class="col-xl-6 col-lg-8 col-md-8 d-none d-lg-block d-xl-none">
                         <div class="hero__caption">
-                            <img src="{{ env('STORAGE_URL_PROD') . '/sections/images/' . $sectionHero->image }}"
-                                class="img img-fluid" width="150%" style="border-radius: 110px 20px 20px 20px"
-                                alt="">
+                            @if (isset($sectionHero))
+                                <img src="{{ env('STORAGE_URL_PROD') . '/sections/images/' . $sectionHero->image }}"
+                                    class="img img-fluid" width="150%" style="border-radius: 110px 20px 20px 20px"
+                                    alt="">
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -138,7 +140,7 @@
     <section class="properties new-arrival fix">
         <div class="container">
             @if (count($transactionHero) > 0)
-                
+
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-8 col-md-10">
                         <div class="section-tittle mb-60 text-center wow fadeInUp" data-wow-duration="1s"
@@ -307,14 +309,16 @@
     </section>
 
     <div class="visit-tailor-area fix">
-        <div class="tailor-offers" style="background: url('{{ env('STORAGE_URL_PROD') . '/sections/images/' . $sectionTravel->image }}')!important"></div>
+        <div class="tailor-offers"
+            style="background: url('{{ env('STORAGE_URL_PROD') . '/sections/images/' . isset($sectionTravel) ? $sectionTravel->image : null }}')!important">
+        </div>
 
         <div class="tailor-details">
             <h2>
-                {{ $sectionTravel->title }}
+                {{ isset($sectionTravel) ? $sectionTravel->title : null }}
             </h2>
             <p>
-                {{ $sectionTravel->description }}
+                {{ isset($sectionTravel) ? $sectionTravel->description : null }}
             </p>
             <a href="#" class="btn">Jelajah Lebih Lanjut</a>
         </div>
