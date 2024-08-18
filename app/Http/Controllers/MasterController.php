@@ -23,8 +23,8 @@ class MasterController extends Controller
         ];
 
         $request->validate([
-            'name' => 'required|string|min:3',
-            'comment' => 'required|string|min:3',
+            'name' => 'required|string',
+            'comment' => 'required|string',
         ]);
 
         if (!in_array($type, $allowedType)) {

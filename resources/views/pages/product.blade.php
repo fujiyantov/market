@@ -45,7 +45,7 @@
             </div>
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-md-4">
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-12">
                             <div class="small-tittle mb-45" id="myBtn">
                                 <div class="ion">
@@ -61,7 +61,6 @@
                         </div>
                     </div>
 
-                    {{-- D-MOBILE --}}
                     <div class="collapse d-lg-none d-xl-block" id="myCollapse">
                         <div class="category-listing mb-50">
                             <div class="categories-wrapper">
@@ -212,23 +211,23 @@
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
 
-                <div class="col-xl-9 col-lg-9 col-md-8">
+                <div class="col-xl-12 col-lg-12 col-md-12">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="count-job mb-35">
                                 <span>{{ number_format(count($collection)) }} Product found</span>
 
-                                <div class="select-cat">
+                                {{-- <div class="select-cat">
                                     <span>Sort by</span>
                                     <select name="select">
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach
                                     </select>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -283,7 +282,7 @@
 
                         <div class="row justify-content-center">
                             <div class="room-btn mt-20">
-                                <a href="#" class="border-btn">More</a>
+                                {{-- <a href="#" class="border-btn">More</a> --}}
                             </div>
                         </div>
                     </div>

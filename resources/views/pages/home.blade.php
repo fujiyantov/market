@@ -12,73 +12,17 @@
             transform: scale(1) !important;
         }
 
-        /* &.card-featured {
-                overflow: hidden;
-                cursor: pointer;
-                height: 100%;
-
-                &:after {
-                    position: absolute;
-                    content: "";
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    transform: scale(1.1);
-                    transition: 0.5s transform ease-in-out;
-                    z-index: 2;
-
-                }
-
-                .img-wrapper {
-                    z-index: 1;
-                    margin: 0;
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    transform: scale(1.1);
-                    transition: 0.25s transform ease-in-out;
-                }
-
-                .meta-wrapper {
-                    z-index: 4;
-                    color: $white;
-                    padding: 20px;
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    width: 100%;
-                    transform: translateY(0);
-                    transition: .3s transform ease-in-out;
-                    display: flex;
-                    justify-content: flex-end;
-                    flex-direction: column;
-                }
-
-                &:hover {
-                    .meta-wrapper {
-                        transform: translateY(-10px);
-                    }
-
-                    &:after {
-                        transform: scale(1);
-                    }
-
-                    .img-wrapper {
-                        transform: scale(1);
-                    }
-                }
-            } */
+        .slider-bg1 {
+            background-image: url('../img/hero/hero-2-m.jpg') !important;
+        }
     </style>
 @endsection
 
 @section('container')
     <!-- Section Hero -->
     <div class="slider-area" style="background: #fff">
-        {{-- <div class="slider-active"> --}}
-        <div class="single-slider hero-overly1 slider-height d-flex align-items-center slider-bg1">
+        <div class="single-slider hero-overly1 slider-height d-flex align-items-center slider-bg1"
+            style="background-image: url('{{ asset('assets/img/hero/hero-2-m.jpg') }}')!important;">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-8 col-md-8">
@@ -121,7 +65,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-6 col-lg-8 col-md-8 d-none d-lg-block d-xl-none">
+                    {{-- <div class="col-xl-6 col-lg-8 col-md-8 d-none d-lg-block d-xl-none">
                         <div class="hero__caption">
                             @if (isset($sectionHero))
                                 <img src="{{ env('STORAGE_URL_PROD') . '/sections/images/' . $sectionHero->image }}"
@@ -129,17 +73,16 @@
                                     alt="">
                             @endif
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
-        {{-- </div> --}}
     </div>
 
     <!-- Section Popular Products -->
     <section class="properties new-arrival fix">
         <div class="container">
-            @if (count($transactionHero) > 0)
+            {{-- @if (count($transactionHero) > 0)
 
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-8 col-md-10">
@@ -205,7 +148,6 @@
                                 @endforeach
                             </div>
 
-                            {{-- D-MOBILE --}}
                             <div class="row d-lg-none d-xl-block">
                                 @foreach ($transaction as $key => $product)
                                     <div class="col-6" style="margin-top: @if ($key > 1) 20px @endif">
@@ -235,7 +177,7 @@
                         </div>
                     @endif
                 </div>
-            @endif
+            @endif --}}
 
             {{-- Looping --}}
             <div class="row">
@@ -277,7 +219,7 @@
                         <div class="col-6 d-lg-none d-xl-block">
                             <div class="single-new-arrival mb-50 wow fadeInUp" data-wow-duration="1s"
                                 data-wow-delay=".1s" style="margin-left: 10px; margin-bottom:30px">
-                                <div class="popular-img" style="margin-right: 10px; margin-bottom: 15px">
+                                <div class="popular-img" style="margin-right: 40px; margin-bottom: 20px">
                                     @if (substr($product->image, 0, 5) == 'https')
                                         <img src="{{ $product->image }}" alt=""
                                             data-pagespeed-url-hash="3041166571" />
@@ -308,24 +250,26 @@
         </div>
     </section>
 
-    <div class="visit-tailor-area fix">
-        <div class="tailor-offers"
-            style="background: url('{{ env('STORAGE_URL_PROD') . '/sections/images/' . isset($sectionTravel) ? $sectionTravel->image : null }}')!important">
-        </div>
+    @if (isset($sectionTravel))
+        <div class="visit-tailor-area fix">
+            <div class="tailor-offers"
+                style="background: url('{{ env('STORAGE_URL_PROD') . '/sections/images/' . !is_null($sectionTravel) ? $sectionTravel->image : null }}')!important">
+            </div>
 
-        <div class="tailor-details">
-            <h2>
-                {{ isset($sectionTravel) ? $sectionTravel->title : null }}
-            </h2>
-            <p>
-                {{ isset($sectionTravel) ? $sectionTravel->description : null }}
-            </p>
-            <a href="#" class="btn">Jelajah Lebih Lanjut</a>
+            <div class="tailor-details">
+                <h2>
+                    {{ !is_null($sectionTravel) ? $sectionTravel->title : null }}
+                </h2>
+                <p>
+                    {{ !is_null($sectionTravel) ? $sectionTravel->description : null }}
+                </p>
+                <a href="#" class="btn">Jelajah Lebih Lanjut</a>
+            </div>
         </div>
-    </div>
+    @endif
 
     <!-- Section Popular Travel -->
-    <div class="new-arrival new-arrival2">
+    {{-- <div class="new-arrival new-arrival2">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-8 col-md-10">
@@ -339,7 +283,6 @@
                 </div>
             </div>
 
-            {{-- looping --}}
             <div class="row">
                 @foreach ($travelCategories as $travelCategory)
                     <div class="col-12">
@@ -347,7 +290,6 @@
                             data-wow-delay=".1s" style="margin-left: -10px">
                             {{ count($travelCategory->travel) > 0 ? $travelCategory->name : '' }}</h3>
 
-                        {{-- D-MOBILE --}}
                         <h3 class="new-arrival-title text-center wow fadeInUp d-lg-none d-xl-block" data-wow-duration="1s"
                             data-wow-delay=".1s" style="margin-left: -10px">
                             {{ count($travelCategory->travel) > 0 ? $travelCategory->name : '' }}</h3>
@@ -375,11 +317,10 @@
                             </div>
                         </div>
 
-                        {{-- D-MOBILE --}}
                         <div class="col-6 d-lg-none d-xl-block">
                             <div class="single-new-arrival mb-50 wow fadeInUp" data-wow-duration="1s"
                                 data-wow-delay=".1s" style="margin-left: 10px; margin-bottom:30px">
-                                <div class="popular-img" style="margin-right: 10px; margin-bottom: 15px">
+                                <div class="popular-img" style="margin-right: 40px; margin-bottom: 20px">
                                     @if (substr($travel->image, 0, 5) == 'https')
                                         <img class="img-cover" src="{{ $travel->image }}" alt=""
                                             data-pagespeed-url-hash="3041166571" />
@@ -409,7 +350,7 @@
                 </div>
             @endif
         </div>
-    </div>
+    </div> --}}
 
     <!-- Section Socila Media -->
     {{-- <div class="instagram-area d-none d-lg-block d-xl-none">

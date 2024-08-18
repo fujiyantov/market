@@ -50,7 +50,7 @@
                 <div class="col-lg-5">
                     <div class="product_slider_img">
                         <div id="vertical">
-                            @foreach ($item->gallery as $res)
+                            @foreach ($item->gallery->take(1) as $res)
                                 @php
                                     if (substr($res->image, 0, 5) == 'https') {
                                         $imageLink = $res->image;

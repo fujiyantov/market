@@ -29,7 +29,7 @@
                                 <ul id="navigation">
                                     <li><a href="{{ route('home') }}">Beranda</a></li>
                                     <li><a href="{{ route('products.index') }}">Produk Budaya</a></li>
-                                    <li><a href="{{ route('travels.index') }}">Travel Budaya</a></li>
+                                    {{-- <li><a href="{{ route('travels.index') }}">Travel Budaya</a></li> --}}
                                     {{-- <li><a href="{{ route('contact') }}">Kontak</a></li> --}}
                                 </ul>
                             </nav>

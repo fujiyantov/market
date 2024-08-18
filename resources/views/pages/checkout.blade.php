@@ -103,12 +103,15 @@
                                     <b>Transfer Pembayaran</b>
                                     <br>
                                     <br>
-                                    <img class="img img-fluid mb-4" src="{{ env('STORAGE_URL_PROD') . '/banks/images/' . $bank->image; }}"
-                                        alt="" width="20%" />
-                                    <br>
-                                    {{ $bank->account_holder }}
-                                    <br>
-                                    <strong>{{ $bank->account_number }}</strong>
+                                    @if (isset($bank))
+                                        <img class="img img-fluid mb-4"
+                                            src="{{ env('STORAGE_URL_PROD') . '/banks/images/' . $bank->image }}"
+                                            alt="" width="20%" />
+                                        <br>
+                                        {{ $bank->account_holder }}
+                                        <br>
+                                        <strong>{{ $bank->account_number }}</strong>
+                                    @endif
                                 </p>
                             </div>
                             <div class="creat_account checkout-cap">
@@ -147,10 +150,15 @@
                                 </div>
                             </form>
                             @php
-                                $message = 'Halo, Saya sudah melakukan pembayaran ' . ucwords($type) . ' Budaya ' . ucwords($item->name) . '. Berikut saya lampirkan foto bukti pembayaran:';
+                                $message =
+                                    'Halo, Saya sudah melakukan pembayaran ' .
+                                    ucwords($type) .
+                                    ' Budaya ' .
+                                    ucwords($item->name) .
+                                    '. Berikut saya lampirkan foto bukti pembayaran:';
                             @endphp
                             <a class="btn w-100 btn-confirmation"
-                                href="https://api.whatsapp.com/send?phone=6281211735338&text={{ $message }}"
+                                href="https://api.whatsapp.com/send?phone=62811861645&text={{ $message }}"
                                 target="_blank">Konfirmasi
                                 Pembayaran</a>
                         </div>
@@ -181,7 +189,12 @@
                                 </li>
                             </ul>
                             @php
-                                $messageAdmin = 'Halo, Saya mendapati kesulitan dalam melakukan checkout: ' . ucwords($type) . ' Budaya ' . ucwords($item->name) . '';
+                                $messageAdmin =
+                                    'Halo, Saya mendapati kesulitan dalam melakukan checkout: ' .
+                                    ucwords($type) .
+                                    ' Budaya ' .
+                                    ucwords($item->name) .
+                                    '';
                             @endphp
                             <a class="btn btn-secondary w-100"
                                 href="https://api.whatsapp.com/send?phone=62811861645&text={{ $messageAdmin }}"
